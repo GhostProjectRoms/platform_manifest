@@ -37,7 +37,7 @@ Initializing the PornAOSP Source:
 
 For initializing repo use:
 
-    repo init -u https://github.com/TeamHorizon/platform_manifest.git -b o
+    repo init -u https://github.com/PornAOSP/platform_manifest.git -b o
 
 Syncing repo:
 
@@ -51,7 +51,7 @@ Set up environment:
 
     . build/envsetup.sh
     
-If your device is officially supported by TeamHorizon, you can do now:
+If your device is officially supported by PornAOSP, you can do now:
 
     breakfast <device_codename>
     
