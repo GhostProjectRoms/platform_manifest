@@ -18,6 +18,9 @@
            sync-c="true"
            sync-f="true"
            sync-j="4" />
+   <remote  name="pos"
+           fetch="https://github.com/PornAOSP/"
+           revision="o" />
 
   <!-- AOSP Projects -->
 
@@ -537,9 +540,35 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" remote="aosp" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" remote="aosp" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" remote="aosp" />
-
+  <!-- End of AOSP Projects -->
+  <!-- PornAOSP Projects -->
+  <project path="bionic" name="android_bionic" remote="pos" />
+  <project path="build/make" name="android_build" remote="pos" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="android_build_soong" remote="pos" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="frameworks/base" name="frameworks_base" remote="pos" />
+  <project path="lineage-sdk" name="android_lineage-sdk" remote="pos" />
+  <project path="manifest" name="platform_manifest" remote="pos" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="pos" />
+  <project path="packages/apps/PornApps" name="android_packages_apps_PornApps" remote="pos" />
+  <project path="packages/apps/PornOTA" name="android_packages_apps_PornOTA" remote="pos" />
+  <project path="packages/apps/PornSettings" name="android_packages_apps_PornSettings" remote="pos" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="pos" />
+  <project path="system/core" name="android_system_core" remote="pos" />
+  <project path="system/sepolicy" name="android_system_sepolicy" remote="pos" />
+  <project path="vendor/paosp" name="vendor_paosp" remote="pos" />
+  <!-- End of PornAOSP Projects -->
   <include name="snippets/lineage.xml" />
-  <include name="snippets/xenonhd.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 

@@ -1,10 +1,10 @@
-XenonHD
+PornAOSP
 ===========
 Blazing fast, Rock-Hard stability. 
 
 Getting Started
 ---------------
-To get started with the Xenon sources, you'll need to get
+To get started with the Porn sources, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
 
@@ -16,7 +16,7 @@ You will need to set up some directories in your build environment.
 To create them run:
 
     mkdir -p ~/bin
-    mkdir -p ~/xenon
+    mkdir -p ~/paosp
 
 
 Install the Repository
@@ -29,10 +29,10 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/rep
 You may need to reboot for these changes to take effect. 
 Now enter the following to initialize the repository:
 
-    cd ~/xenon
+    cd ~/paosp
 
 
-Initializing the XenonHD Source:
+Initializing the PornAOSP Source:
 ---------------
 
 For initializing repo use:
@@ -44,7 +44,7 @@ Syncing repo:
     repo sync -j2 | -j4 |-j8 | -j32 (# of CPUs x2)
 
 
-Compiling XenonHD
+Compiling PornAOSP
 ---------------
 
 Set up environment:
@@ -65,9 +65,9 @@ If your device is officially supported by TeamHorizon, you can do now:
 Adding support for new device
 ================
 
-If you want to be official maintainer and add XenonHD support for a new device you have to create these two files in device tree:
+If you want to be official maintainer and add PornAOSP support for a new device you have to create these two files in device tree:
 
-xenonhd.mk sample
+paosp.mk sample
 ----------
 
     # Inherit from those products. Most specific first.
@@ -78,13 +78,13 @@ xenonhd.mk sample
     $(call inherit-product, device/<path>/device.mk) -- path to main device makefile
 
     # Inherit common product files.
-    $(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
+    $(call inherit-product, vendor/paosp/config/common_full_phone.mk)
 
     # Set those variables here to overwrite the inherited values.
     BOARD_VENDOR := 
     PRODUCT_BRAND := 
     PRODUCT_DEVICE := 
-    PRODUCT_NAME := xenonhd_device
+    PRODUCT_NAME := paosp_device
     PRODUCT_MANUFACTURER := 
     PRODUCT_MODEL := 
     TARGET_VENDOR := 
@@ -96,7 +96,7 @@ xenonhd.mk sample
         PRIVATE_BUILD_DESC="specific for your device"
     endif
 
-xenonhd.dependencies sample
+paosp.dependencies sample
 ----------
 
     [
